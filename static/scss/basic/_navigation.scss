@@ -1,0 +1,612 @@
+a {
+  text-decoration: none;
+  transition: all .6s ease-in-out;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+      color: $brand_accent;
+      text-decoration: none;
+  }
+
+  &:focus {
+      .no-touch & {
+          outline: none;
+      }
+  }
+}
+
+a:link,
+button {
+  -webkit-tap-highlight-color: rgba($brand_accent, .35);
+  -moz-tap-highlight-color: rgba($brand_accent, .35);
+}
+
+button {
+  outline: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  width: auto;
+  height: auto;
+  color: inherit;
+  cursor: pointer;
+  text-align: center;
+  transition: all .6s ease-in-out;
+
+  &:focus,
+  &:visited {
+      outline: none;
+  }
+}
+
+.btn {
+  border-radius: 40px;
+  padding: 10px 22px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  font-weight: 800 !important;
+  background-color: transparent;
+  color: white;
+  fill: $border_grey_light;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  // display: inline-block;
+  position: relative;
+  @include flex_row_center_nowrap;
+  max-width: 100%;
+  box-shadow: 0px 0px 0px transparent;
+  transition: all .6s ease-in-out;
+  text-decoration: none !important;
+
+  @include breakpoint_min(md) {
+      min-width: 100px;
+      padding: 12px 32px;
+
+      +.btn {
+          margin-left: 1.5rem;
+      }
+  }
+
+  @include breakpoint_min(md) {
+      font-size: 10px;
+      padding: 10px 20px;
+  }
+
+  &:hover,
+  &:focus {
+      text-decoration: none !important;
+      box-shadow: 2px 5px 10px 0 rgba($brand_black, .4);
+
+      .no-touch & {
+          outline: none;
+      }
+  }
+}
+
+.btn-primary {
+  background-color: $brand_primary !important;
+
+  &:hover,
+  &:focus {
+      background-color: $brand_accent !important;
+      color: $brand_black !important;
+  }
+}
+
+.btn-accent {
+  background-color: $brand_accent !important;
+  color: $brand_black !important;
+  transition: all .6s ease-in-out;
+
+  &:hover,
+  &:focus {
+      background-color: $brand_inverse !important;
+      color: #ffffff !important;
+  }
+}
+
+.btn-secondary {
+  background-color: $border_grey !important;
+  color: $color_ash !important;
+
+  &:hover,
+  &:focus {
+      background-color: $brand_accent !important;
+  }
+}
+
+.btn-inverse {
+  color: $brand_primary;
+  background: $brand_inverse;
+
+  &:hover,
+  &:focus {
+      background-color: $brand_accent !important;
+      color: $brand_navy !important;
+  }
+}
+
+.btn-default {
+  background-color: transparent;
+  color: $color_text;
+
+  &:hover,
+  &:focus,
+  &:visited {
+      background-color: $border_grey_light;
+      color: $brand_black;
+  }
+}
+
+.btn-secondary-outline {
+  background-color: transparent !important;
+  color: $brand_accent !important;
+  border-color: $brand_accent !important;
+
+  &:hover,
+  &:focus {
+      color: $color_white !important;
+      background-color: $brand_primary !important;
+  }
+}
+
+.btn-primary-outline {
+  background-color: transparent !important;
+  color: $brand_primary !important;
+  border: 2px solid $brand_primary !important;
+
+  &:hover,
+  &:focus {
+      color: $color_white !important;
+      background-color: $brand_primary !important;
+      border-color: transparent !important;
+  }
+}
+
+.btn-default-outline {
+  background-color: transparent;
+  color: $color_text;
+  border: 2px solid $border_grey;
+
+  &:hover,
+  &:focus {
+      color: $color_white;
+      background-color: $brand_primary;
+      border-color: transparent;
+  }
+}
+
+.btn-grey-outline {
+  background-color: transparent;
+  color: $color_white;
+  border: .5px solid $border_grey;
+
+  &:hover,
+  &:focus {
+      color: $color_deep_blue;
+      background-color: $brand_accent;
+      border-color: transparent;
+  }
+}
+
+.btn-inverse-outline {
+  background-color: transparent;
+  color: $brand_inverse;
+  border: 2px solid $brand_inverse;
+
+  &:hover,
+  &:focus {
+      color: $color_white;
+      background-color: $brand_inverse;
+      border-color: transparent;
+  }
+}
+
+.btn-tonic-outline {
+  background-color: transparent;
+  color: $brand_tonic;
+  border: 2px solid $brand_tonic;
+
+  &:hover,
+  &:focus {
+      color: $color_white;
+      background-color: $brand_tonic;
+      border-color: transparent;
+  }
+}
+
+.btn-md {
+  @include breakpoint_max(sm) {
+      font-size: 10px !important;
+      padding: 10px 21px !important;
+  }
+}
+
+.btn-sm.btn,
+.btn-group-sm>.btn {
+  font-size: 12px;
+  padding: 8.5px 1.5em;
+  
+  @include breakpoint_max(sm) {
+      font-size: 9px;
+      padding: 8.5px 16px;
+  }
+}
+
+.btn-lg.btn,
+.btn-group-lg>.btn {
+  padding: 15px 4em;
+  font-size: 14px;
+
+  @include breakpoint_max(sm) {
+      font-size: 10.5px;
+      padding: 11px 3em;
+  }
+}
+
+.btn-icon {
+  @include equal_min_edge(32);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  fill: $brand_black;
+  opacity: .75;
+  border: none;
+  background-color: transparent;
+
+  &:hover,
+  &:hover {
+      background-color: $brand_inverse_light;
+      opacity: 1;
+  }
+}
+
+.btn-link {
+  cursor: pointer;
+  font-size: 1em;
+  display: inline-block;
+  text-decoration: underline;
+  color: $brand_accent;
+
+  &:hover,
+  &:focus {
+      color: $brand_inverse !important;
+      text-decoration: none;
+  }
+
+  &:active,
+  &[disabled] {
+      color: $border_grey_dark;
+      outline: none;
+  }
+}
+
+.disable-btn-styling {
+  opacity: 0.7;
+  cursor: text !important;
+
+  &:hover {
+      background: $brand_accent;
+      opacity: 0.6;
+      box-shadow: unset !important;
+  }
+}
+
+// CLOSE BUTTON
+.dialogDismiss {
+  position: absolute;
+  right: 15px;
+  top: 22px;
+  display: flex;
+  z-index: 1000;
+}
+
+.pageClose {
+  position: fixed;
+
+  @include breakpoint_min(md) {
+      top: 30px;
+      right: 40px;
+  }
+
+  @include breakpoint_min(sm) {
+      top: 30px;
+      right: 15px;
+  }
+}
+
+.close_dialog {
+  z-index: 5;
+  @include equal_min_edge(30);
+  font-size: 10px;
+  text-align: center;
+  border-radius: 50%;
+  position: relative;
+  
+  @include breakpoint_max(sm) {
+      @include equal_min_edge(25);
+  }
+
+  &::before,
+  &::after {
+      position: absolute;
+      content: "";
+      width: 2px;
+      background: $border_grey_dark;
+      height: 14px;
+      top: 50%;
+      left: 50%;
+      margin: -7px 0 0 -1px;
+  }
+
+  &::before {
+      transform: rotate(-45deg);
+  }
+
+  &::after {
+      transform: rotate(45deg);
+  }
+
+  &:hover,
+  &:focus {
+      background-color: $brand_inverse_light !important;
+
+      &::before,
+      &::after {
+          background-color: $brand_black;
+      }
+  }
+}
+
+.closeLabel {
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+  bottom: -35px;
+  opacity: .65;
+}
+
+.cls_lg {
+  @include equal_min_edge(48);
+
+  &::before,
+  &::after {
+      height: 24px;
+      margin-top: -12px;
+  }
+
+  @include breakpoint_max(sm) {
+      @include equal_min_edge(32);
+
+      &::before,
+      &::after {
+          height: 18px;
+          margin-top: -8px;
+      }
+  }
+}
+
+.cls_md {
+  @include equal_min_edge(32);
+  
+  &::before,
+  &::after {
+      height: 16px;
+      margin-top: -8px;
+  }
+  
+  @include breakpoint_max(sm) {
+      @include equal_min_edge(28);
+  }
+}
+
+.cls_sm {
+  @include equal_min_edge(16);
+
+  &::before,
+  &::after {
+      height: 8px;
+      margin-top: -4px;
+  }
+}
+
+// CLOSE BUTTON
+.close-btn {
+  position: relative;
+  background-color: $color_white;
+  @include equal_min_edge(30);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .6s ease-in-out;
+  
+  @include breakpoint_max(sm) {
+      @include equal_min_edge(26);
+  }
+
+
+  &::before,
+  &::after {
+      content: "";
+      @include transform_center();
+      @include equal_min_edge(14);
+      transition: all .4s ease-in-out;
+  }
+
+  &::before {
+      border-left: 1.5px solid rgb(156, 156, 156);
+      transform: translate(-2.5px, -3px) rotate(45deg);
+  }
+
+  &::after {
+      border-right: 1.5px solid rgb(156, 156, 156);
+      transform: translate(-11px, -3px) rotate(-45deg);
+  }
+
+  &:hover {
+      background-color: rgba($brand_inverse, .2);
+
+      &::before,
+      &::after {
+          border-color: rgb(116, 116, 116);
+      }
+  }
+}
+
+.close-btn-sm {
+  @include equal_min_edge(24);
+
+  &::before,
+  &::after {
+      @include equal_min_edge(12)
+  }
+
+  &::before {
+      transform: translate(-2px, -2px) rotate(45deg)
+  }
+
+  &::after {
+      transform: translate(-9.5px, -2px) rotate(-45deg)
+  }
+}
+
+// TO TOP
+.to-top {
+  display: inline-block;
+  @include equal_min_edge(30);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 15px;
+  right: 3.5%;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s 0s, visibility 0s .3s;
+  z-index: 30000;
+
+  .no-touch & {
+
+      &:hover,
+      &:focus {
+          background-color: $brand_primary;
+          opacity: 1;
+      }
+  }
+
+  &.is-visible,
+  &.fade-out,
+  .no-touch &:hover {
+      transition: opacity .3s, visibility 0s;
+  }
+
+  &.is-visible {
+      /* the button becomes visible */
+      visibility: visible;
+      opacity: 1;
+  }
+
+  &.fade-out {
+      /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+      opacity: .5;
+  }
+}
+
+
+// NAVIGATION TABS
+%tabs-styling {
+  position: absolute;
+  content: "";
+  width: 100%;
+  left: 0;
+  bottom: -9px;
+  height: 3px;
+  background: $brand_accent;
+}
+
+.tabs {
+  padding-bottom: 8px;
+  border-bottom: 1px solid $border_grey;
+
+  .tab {
+      position: relative;
+      color: $border_grey_dark;
+      width: 50%;
+      font-size: 14px;
+      line-height: 19px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+
+      &:hover {
+          color: $color_text;
+
+          &::after {
+              @extend %tabs-styling;
+          }
+      }
+  }
+
+  .active {
+      font-weight: 600;
+      color: $color_text;
+
+      &::after {
+          @extend %tabs-styling;
+      }
+  }
+}
+
+
+// PAGE TAB PLACEHOLDER
+%page-tab-styling {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  bottom: -7.5px;
+  left: 0;
+  background: $brand_accent;
+}
+
+.page-tab {
+  padding-bottom: 8px;
+  margin-top: 32px;
+  border-bottom: 1px solid $border_grey;
+
+  .tab {
+      position: relative;
+      font-size: 14px;
+      line-height: 19px;
+      color: $border_grey_dark;
+      padding-left: 15.5px;
+      padding-right: 15.5px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      @include breakpoint_max(lg) {
+          font-size: 13.5px;
+      }
+
+      &:hover {
+          color: #2e2d2d;
+          font-weight: 500;
+
+          &:after {
+              @extend %page-tab-styling;
+          }
+      }
+  }
+
+  .active {
+      color: #2e2d2d;
+      font-weight: 500;
+
+      &:after {
+          @extend %page-tab-styling;
+      }
+  }
+}

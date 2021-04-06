@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?irm3pk');
+  src:  url('fonts/icomoon.eot?irm3pk#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?irm3pk') format('truetype'),
+    url('fonts/icomoon.woff?irm3pk') format('woff'),
+    url('fonts/icomoon.svg?irm3pk#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon_arrow_down:before {
+  content: "\e901";
+  color: #abb5be;
+}
+.icon-icon_add:before {
+  content: "\e900";
+  color: #4586e8;
+}
+.icon-icon_arrow_left:before {
+  content: "\e902";
+  color: #4586e8;
+}
+.icon-icon_avatar .path1:before {
+  content: "\e903";
+  color: rgb(132, 132, 133);
+}
+.icon-icon_avatar .path2:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-icon_calender:before {
+  content: "\e905";
+  color: #5b5b5b;
+}
+.icon-icon_cancel:before {
+  content: "\e906";
+}
+.icon-icon_caret_down:before {
+  content: "\e907";
+  color: #828282;
+}
+.icon-icon_delete:before {
+  content: "\e908";
+  color: #848485;
+}
+.icon-icon_eye:before {
+  content: "\e909";
+  color: #4586e8;
+}
+.icon-icon_file:before {
+  content: "\e90a";
+  color: #4586e8;
+}
+.icon-icon_folder:before {
+  content: "\e90b";
+  color: #4586e8;
+}
+.icon-icon_level:before {
+  content: "\e90c";
+  color: #4586e8;
+}
+.icon-icon_pen:before {
+  content: "\e90d";
+  color: #848485;
+}
+.icon-icon_people:before {
+  content: "\e90e";
+  color: #4586e8;
+}
+.icon-icon_person_blue:before {
+  content: "\e90f";
+  color: #4586e8;
+}
+.icon-icon_person:before {
+  content: "\e910";
+  color: #5b5b5b;
+}
+.icon-icon_search:before {
+  content: "\e911";
+  color: #abb5be;
+}
+.icon-icon_setting_blue:before {
+  content: "\e912";
+  color: #4586e8;
+}
+.icon-icon_setting:before {
+  content: "\e913";
+  color: #848485;
+}

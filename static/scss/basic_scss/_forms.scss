@@ -27,7 +27,7 @@ input {
   margin-bottom: 0;
   padding-bottom: 0.4688rem;
   line-height: 1.4rem;
-  color: $color_grey_dark;
+  color: $text_primary;
 
   [class*="checkbox"] &,
   [class*="radio"] & {
@@ -168,7 +168,7 @@ input[disabled] {
 
 // SELECT FORM STYLING 
 select.form-control {
-  background: white url(../img/icons/arrow-down.png) right center no-repeat;
+  background: white url(../) right center no-repeat;
 
   &:focus {
       outline: none;

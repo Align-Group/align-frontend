@@ -1,5 +1,7 @@
 <template>
-  <div class="container"></div>
+  <div class="container">
+    <vue-headful title="Signup | Ava" description="Description goes here" />
+  </div>
 </template>
 
 <script>

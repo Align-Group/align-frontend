@@ -1,0 +1,220 @@
+/* ===================
+FULL WIDTH AND HEIGHT
+======================= */
+@mixin img_cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =============================
+FULL WIDTH AND HEIGHT CONTAINED
+================================ */
+@mixin img_contain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* =================
+STRETCHED SECTION
+==================== */
+@mixin section_stretch {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* =================
+TRANSFORM CENTER
+==================== */
+@mixin transform_center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+@mixin clearfix {
+
+  &:before,
+  &:after {
+      content: "";
+      display: table;
+  }
+
+  &:after {
+      clear: both;
+  }
+
+  *zoom: 1;
+}
+
+/* =================
+FIXED FULL HEIGHT
+==================== */
+@mixin fixed_full_section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@mixin equal_min_edge($value) {
+  min-width: #{$value/16}rem;
+  min-height: #{$value/16}rem;
+  width: #{$value/16}rem;
+  height: #{$value/16}rem;
+}
+
+@mixin custom_min_edge($width, $height) {
+  min-width: #{$width/16}rem;
+  min-height: #{$height/16}rem;
+  width: #{$width/16}rem;
+  height: #{$height/16}rem;
+}
+
+/* ==============
+FLEX ROW CENTER
+================== */
+@mixin flex_row_center_wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex_row_center_nowrap {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==============
+FLEX ROW START
+================== */
+@mixin flex_row_start_wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flex_row_start_nowrap {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* ==============
+FLEX ROW END
+================== */
+@mixin flex_row_end_wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@mixin flex_row_end_nowrap {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* ==============
+FLEX ROW BETWEEN
+================== */
+@mixin flex_row_between_wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex_row_between_nowrap {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ==============
+FLEX ROW AROUND
+================== */
+@mixin flex_row_around_wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin flex_row_around_nowrap {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* ==============
+FLEX ROW EVENLY
+================== */
+@mixin flex_row_evenly_wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@mixin flex_row_evenly_nowrap {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* ==================
+FLEX COLUMN CENTER
+==================== */
+@mixin flex_column_center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =================
+FLEX COLUMN START
+==================== */
+@mixin flex_column_start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* =================
+LABEL COMPACT STYLING
+==================== */
+@mixin label_compact {
+  position: absolute;
+  top: -11px;
+  left: 24px;
+  background-color: white;
+  padding: 1px 4px;
+  text-transform: uppercase;
+  font-size: 13.5px;
+  color: $brand_primary !important;
+  font-weight: bold;
+  z-index: 99;
+}

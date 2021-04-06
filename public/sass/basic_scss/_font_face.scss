@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Noto Sans';
+  src: local(NotoSans-Regular);
+}
+
+$body_font: 'Noto Sans',
+Roboto,
+Segoe UI,
+Open Sans,
+sans-serif;
+
+body {
+  font-family: $body_font;
+  font-display: fallback;
+}

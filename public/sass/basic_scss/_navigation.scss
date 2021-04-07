@@ -41,7 +41,6 @@ button {
 }
 
 .btn {
-  border-radius: 40px;
   padding: 10px 22px;
   font-size: 12px;
   letter-spacing: 0.05em;
@@ -49,8 +48,7 @@ button {
   background-color: transparent;
   color: white;
   fill: $border_grey_light;
-  text-transform: uppercase;
-  border: none;
+  border: none  !important;
   cursor: pointer;
   // display: inline-block;
   position: relative;
@@ -90,9 +88,13 @@ button {
 
   &:hover,
   &:focus {
-      background-color: $brand_accent !important;
+      background-color: rgba($brand_primary, .9) !important;
       color: $brand_black !important;
   }
+}
+
+.btn-stretch{
+  min-width: 100%;
 }
 
 .btn-accent {
@@ -269,11 +271,11 @@ button {
   font-size: 1em;
   display: inline-block;
   text-decoration: underline;
-  color: $brand_accent;
+  color: $brand_blue;
 
   &:hover,
   &:focus {
-      color: $brand_inverse !important;
+      color: $brand_primary !important;
       text-decoration: none;
   }
 

@@ -126,7 +126,7 @@ $indexes: 1,
 /* ===================
 MARGINS
 ======================= */
-$margins: 60, 70, 80, 90, 100, 110, 120, 130;
+$margins: 25, 60, 70, 80, 90, 100, 110, 120, 130;
 
 @each $margin in $margins {
     .mt-#{$margin} {
@@ -135,6 +135,14 @@ $margins: 60, 70, 80, 90, 100, 110, 120, 130;
 
     .mb-#{$margin} {
         margin-bottom: #{$margin}px
+    }
+
+    .ml-#{$margin} {
+        margin-left: #{$margin}px
+    }
+
+    .mr-#{$margin} {
+        margin-right: #{$margin}px
     }
 }
 

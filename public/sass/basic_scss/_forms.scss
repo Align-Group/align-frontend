@@ -3,7 +3,8 @@
 ==================== */
 
 // INPUT PLACEHOLDER
-input {
+input, select {
+    background-color: $border_grey_light !important;
   &::placeholder {
       color: $color_ash_lighter !important;
   }

@@ -5,7 +5,9 @@
     <div class="signup-section">
       <div class="row">
         <div class="col-12">
-          <img v-lazy="localImg('ava.svg')" class="brand-logo" alt="ava" />
+          <div class="brand-logo mt-25 ml-80 mb-60">
+            <img v-lazy="localImg('ava.svg')" alt="ava" />
+          </div>
         </div>
       </div>
       <div class="container">
@@ -206,6 +208,13 @@ export default {
 @media screen and (max-width: 576px) {
   .right-layout {
     display: none !important;
+  }
+
+  .brand-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
   }
 }
 </style>

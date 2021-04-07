@@ -6,11 +6,13 @@ import store from "./store";
 
 import vueHeadful from "vue-headful";
 import { BootstrapVue } from "bootstrap-vue";
+import VueLazyload from "vue-lazyload";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
 Vue.use(BootstrapVue);
+Vue.use(VueLazyload);
 
 Vue.component("vue-headful", vueHeadful);
 

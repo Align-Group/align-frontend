@@ -3,16 +3,21 @@
     <vue-headful title="Signup | Ava" description="Description goes here" />
 
     <div class="signup-section">
+      <div class="row">
+        <div class="col-12">
+          <img v-lazy="localImg('ava.svg')" class="brand-logo" alt="ava" />
+        </div>
+      </div>
       <div class="container">
-        <div class="row">
+        <div class="row base-layout">
           <div class="col-12 col-md-6 col-lg-6 left-layout">
             <div class="form-block">
               <h6 class="text-center">Welcome to Ava!</h6>
-              <h5 class="text-center font-weight-bold">
+              <h6 class="text-center font-weight-bold my-4">
                 Let's kick off with few simple steps
-              </h5>
+              </h6>
 
-              <form action="">
+              <form action="" autocomplete="off">
                 <div class="row">
                   <div class="col-12 col-md-6 col-lg-6">
                     <div class="form-group">
@@ -171,7 +176,7 @@
           </div>
 
           <div class="col-12 col-md-6 col-lg-6 right-layout">
-            <h1 class="font-weight-bold">
+            <h1 class="font-weight-bold mt-2">
               Performance management has never been easier
             </h1>
             <img
@@ -196,4 +201,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+// hide landing image on smaller screens
+@media screen and (max-width: 576px) {
+  .right-layout {
+    display: none !important;
+  }
+}
+</style>

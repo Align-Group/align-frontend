@@ -11,8 +11,11 @@ import VueLazyload from "vue-lazyload";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
+import RenderAssets from "@/scripts/mixins/RenderAssets";
+
 Vue.use(BootstrapVue);
 Vue.use(VueLazyload);
+Vue.mixin(RenderAssets);
 
 Vue.component("vue-headful", vueHeadful);
 

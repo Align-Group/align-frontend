@@ -92,11 +92,7 @@
             <h1 class="font-weight-bold mt-2">
               Performance management has never been easier
             </h1>
-            <img
-              src="../../../public/img/landing.svg"
-              alt="landing image"
-              class="img-responsive"
-            />
+            <img v-lazy="localImg('landing.svg')" alt="landing" />
           </div>
         </div>
       </div>

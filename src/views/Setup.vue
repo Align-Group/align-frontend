@@ -166,11 +166,9 @@
                   </div>
                 </div>
 
-                <div class="d-flex justify-content-end align-items-center">
-                  <span class="icon icon_add"></span>
-                  <router-link
-                    :to="{ name: '' }"
-                    class="btn-link mr-2 font-12 mb-3"
+                <div class="d-flex justify-content-end align-items-center mb-3">
+                  <span class="icon-add mr-2 align-self-center"></span>
+                  <router-link :to="{ name: '' }" class="btn-link font-13"
                     >Add new team</router-link
                   >
                 </div>

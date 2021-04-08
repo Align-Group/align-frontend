@@ -3,7 +3,7 @@
 ==================== */
 
 // INPUT PLACEHOLDER
-input, select {
+input[type="text"],input[type="email"], input[type="password"],  select {
     background-color: $border_grey_light !important;
   &::placeholder {
       color: $color_ash_lighter !important;

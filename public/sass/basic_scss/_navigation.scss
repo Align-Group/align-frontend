@@ -44,7 +44,6 @@ button {
   padding: 10px 22px;
   font-size: 12px;
   letter-spacing: 0.05em;
-  font-weight: 800 !important;
   background-color: transparent;
   color: white;
   fill: $border_grey_light;
@@ -85,6 +84,7 @@ button {
 
 .btn-primary {
   background-color: $brand_primary !important;
+  transition: 1s;
 
   &:hover,
   &:focus {

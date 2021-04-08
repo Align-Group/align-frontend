@@ -162,7 +162,7 @@
               <div class="auth-signup-cta mt-3">
                 <p class="text-center font-15">
                   Already have an account?
-                  <router-link :to="{ name: 'login' }" class="btn-link"
+                  <router-link :to="{ name: 'Login' }" class="btn-link"
                     >&nbsp; Login here</router-link
                   >
                 </p>

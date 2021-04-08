@@ -8,6 +8,7 @@ $brand_white: #f4f4f4;
 $color_ash_lighter:#ABB5BE;
 $brand_red: #FE747D;
 $brand_red_light: #FFDCDE;
+$text_grey_dark: #697386;
 
 
 
@@ -54,6 +55,7 @@ $app-color: map-merge(("brand_primary": $brand_primary,
         "border_grey": $border_grey,
         "border_grey_light": $border_grey_light,
         "border_grey_dark": $border_grey_dark,
+        "text_grey_dark": $text_grey_dark,
         "brand_navy": $brand_navy,
         "brand_tonic": $brand_tonic,
         "color_deep_blue": $color_deep_blue,

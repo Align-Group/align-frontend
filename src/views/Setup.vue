@@ -19,21 +19,33 @@
           <p>Continue setting up your workspace</p>
 
           <div class="stepper-container">
-            <div class="stepper stepper-1">
+            <div
+              class="stepper stepper-1"
+              :class="{ isActive: currentStep == 1 }"
+            >
               <span class="font-14">Workspace Name</span>
               <p class="text_grey_dark font-12">Name your Ava workspace</p>
             </div>
-            <div class="stepper stepper-2">
+            <div
+              class="stepper stepper-2"
+              :class="{ isActive: currentStep == 2 }"
+            >
               <span class="font-14">Send Invites (Optional)</span>
               <p class="text_grey_dark font-12">
                 Invite your colleagues to Ava
               </p>
             </div>
-            <div class="stepper stepper-3">
+            <div
+              class="stepper stepper-3"
+              :class="{ isActive: currentStep == 3 }"
+            >
               <span class="font-14">Create Teams (Optional)</span>
               <p class="text_grey_dark font-12">Provide your team name</p>
             </div>
-            <div class="stepper stepper-4">
+            <div
+              class="stepper stepper-4"
+              :class="{ isActive: currentStep == 4 }"
+            >
               <span class="font-14">Setup Complete</span>
               <p class="text_grey_dark font-12">Start using Ava!</p>
             </div>
@@ -43,8 +55,8 @@
 
       <div class="row mt-60">
         <div class="col-12">
-          <form>
-            <div v-if="step === 1">
+          <form autocomplete="off">
+            <div v-if="currentStep === 1">
               <div class="step-block">
                 <p class="text-center text_grey_dark font-12">Welcome, Koko</p>
                 <p class="text-center font-weight-bold mb-4">
@@ -73,7 +85,7 @@
               </div>
             </div>
 
-            <div v-if="step === 2">
+            <div v-if="currentStep === 2">
               <div class="step-block">
                 <h6 class="text-center text_grey_dark font-12">
                   Welcome, Koko
@@ -141,7 +153,7 @@
               </div>
             </div>
 
-            <div v-if="step === 3">
+            <div v-if="currentStep === 3">
               <div class="step-block">
                 <p class="text-center text_grey_dark font-12">Welcome, Koko</p>
                 <p class="text-center font-weight-bold mb-4">
@@ -184,7 +196,7 @@
               </div>
             </div>
 
-            <div v-if="step === 4">
+            <div v-if="currentStep === 4">
               <div class="step-block">
                 <h6 class="text-center font-15">
                   That’s it! You have completed the setup
@@ -214,16 +226,13 @@
 export default {
   data() {
     return {
-      step: 1,
+      currentStep: 1,
       registration: {},
     };
   },
   methods: {
-    prev() {
-      this.step--;
-    },
     next() {
-      this.step++;
+      this.currentStep++;
     },
   },
 };

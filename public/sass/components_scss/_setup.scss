@@ -29,3 +29,16 @@
   margin: 0 auto;
   padding: 37px 34px 28px 44px;
 }
+
+
+.isActive, .isActive > * {
+  color: #FFFFFF !important;
+  background-color: $brand_primary;
+  border: none;
+}
+
+
+div .stepper-1:after {
+  border: 15px solid transparent;
+  border-right: 15px solid #2cbab2;
+}

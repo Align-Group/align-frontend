@@ -15,8 +15,10 @@
       </div>
 
       <div class="row">
-        <div class="col-12 text-center">
-          <p>Continue setting up your workspace</p>
+        <div class="col-12">
+          <div class="setup-header">
+            <p>Continue setting up your workspace</p>
+          </div>
 
           <div class="stepper-container">
             <div
@@ -104,7 +106,9 @@
                       class="form-check-input"
                       type="radio"
                       name="emailList"
+                      value="email"
                       id="emailList"
+                      v-model="inviteMode"
                       checked
                     />
                     <label class="form-check-label font-12" for="emailList">
@@ -117,6 +121,8 @@
                       type="radio"
                       name="excelList"
                       id="excelList"
+                      value="excel"
+                      v-model="inviteMode"
                     />
                     <label class="form-check-label font-12" for="excelList">
                       Import from excel
@@ -126,7 +132,7 @@
 
                 <hr />
 
-                <div class="row mt-2">
+                <div class="row mt-2" v-if="inviteMode === 'email'">
                   <div class="col-12">
                     <div class="form-group">
                       <label for="workspace" class="color_grey_dark font-12"
@@ -139,6 +145,12 @@
                         placeholder="colleague@mail.com, colleague2@mail.com"
                       />
                     </div>
+                  </div>
+                </div>
+
+                <div class="row mt-2" v-if="inviteMode === 'excel'">
+                  <div class="col-12">
+                    <DragDropInput />
                   </div>
                 </div>
 
@@ -223,10 +235,15 @@
 </template>
 
 <script>
+import DragDropInput from "../components/DragDropInput.vue";
 export default {
+  components: {
+    DragDropInput,
+  },
   data() {
     return {
       currentStep: 1,
+      inviteMode: "email",
       registration: {},
     };
   },

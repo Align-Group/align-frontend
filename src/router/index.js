@@ -1,14 +1,51 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import DashboardLayout from "../layout/dashboard/DashboardLayout.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    redirect: "dashboard",
+    component: DashboardLayout,
+    children: [
+      {
+        path: "/dashboard",
+        name: "dashboard",
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+          import(/* webpackChunkName: "demo" */ "../views/Dashboard.vue"),
+      },
+      {
+        path: "/teams",
+        name: "teams",
+        component: () =>
+          import(/* webpackChunkName: "demo" */ "../views/Teams.vue"),
+      },
+      {
+        path: "/template",
+        name: "template",
+        component: () =>
+          import(
+            /* webpackChunkName: "demo" */ "../views/AppraisalTemplate.vue"
+          ),
+      },
+      {
+        path: "/maps",
+        name: "maps",
+        component: () =>
+          import(/* webpackChunkName: "demo" */ "../views/Schedule.vue"),
+      },
+      {
+        path: "/tables",
+        name: "tables",
+        component: () =>
+          import(/* webpackChunkName: "demo" */ "../views/Settings.vue"),
+      },
+    ],
   },
   {
     path: "/signup",

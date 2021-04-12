@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import DashboardLayout from "../views/dashboard/DashboardLayout.vue";
+import AppLayout from "@/layouts/AppLayout.vue";
+import PublicLayout from "@/layouts/PublicLayout.vue";
 
 Vue.use(VueRouter);
 
@@ -8,7 +9,7 @@ const routes = [
   {
     path: "/",
     redirect: "dashboard",
-    component: DashboardLayout,
+    component: AppLayout,
     children: [
       {
         path: "/dashboard",
@@ -18,18 +19,20 @@ const routes = [
         // which is lazy-loaded when the route is visited.
         component: () =>
           import(/* webpackChunkName: "demo" */ "../views/Dashboard.vue"),
-        // meta: {
-        //   requiresAuth: true,
-        // },
+        meta: {
+          // requiresAuth: true,
+          layout: AppLayout,
+        },
       },
       {
         path: "/user-teams",
         name: "Teams",
         component: () =>
           import(/* webpackChunkName: "demo" */ "../views/Teams.vue"),
-        // meta: {
-        //   requiresAuth: true,
-        // },
+        meta: {
+          // requiresAuth: true,
+          layout: AppLayout,
+        },
       },
       {
         path: "/appraisal-template",
@@ -38,18 +41,20 @@ const routes = [
           import(
             /* webpackChunkName: "demo" */ "../views/AppraisalTemplate.vue"
           ),
-        // meta: {
-        //   requiresAuth: true,
-        // },
+        meta: {
+          // requiresAuth: true,
+          layout: AppLayout,
+        },
       },
       {
         path: "/schedule",
         name: "Schedule",
         component: () =>
           import(/* webpackChunkName: "demo" */ "../views/Schedule.vue"),
-        // meta: {
-        //   requiresAuth: true,
-        // },
+        meta: {
+          // requiresAuth: true,
+          layout: AppLayout,
+        },
       },
 
       {
@@ -57,9 +62,10 @@ const routes = [
         name: "Settings",
         component: () =>
           import(/* webpackChunkName: "demo" */ "../views/Settings.vue"),
-        // meta: {
-        //   requiresAuth: true,
-        // },
+        meta: {
+          // requiresAuth: true,
+          layout: AppLayout,
+        },
       },
     ],
   },
@@ -73,6 +79,7 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/auth/Signup.vue"),
     meta: {
       guest: true,
+      layout: PublicLayout,
     },
   },
   {
@@ -85,6 +92,7 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/auth/Login.vue"),
     meta: {
       guest: true,
+      layout: PublicLayout,
     },
   },
   {
@@ -95,6 +103,10 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Setup.vue"),
+    meta: {
+      // requiresAuth: true,
+      layout: AppLayout,
+    },
   },
   {
     path: "/about",
@@ -104,6 +116,15 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    meta: {
+      // requiresAuth: true,
+      layout: AppLayout,
+    },
+  },
+  {
+    path: "*",
+    name: "404*",
+    component: require("@/views/404.vue").default, // load sync home
   },
 ];
 

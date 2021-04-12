@@ -44,18 +44,22 @@
       </template>
     </side-bar>
     <div class="main-content">
-      <!-- <dashboard-navbar :type="$route.meta.navbarType"></dashboard-navbar> -->
-
-      <!-- <div @click="$sidebar.displaySidebar(false)"> -->
-      <!-- <fade-transition :duration="200" origin="center top" mode="out-in"> -->
       <!-- your content here -->
+      <DashboardNavbar />
       <router-view></router-view>
-      <!-- </fade-transition> -->
-      <!-- </div> -->
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script>
+import DashboardNavbar from "../../components/dashboard/DashboardNavbar";
+
+export default {
+  name: "DashboardLayout",
+  component: {
+    DashboardNavbar,
+  },
+};
+</script>
 
 <style lang="scss" scoped></style>

@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import DashboardLayout from "../layout/dashboard/DashboardLayout.vue";
+import DashboardLayout from "../views/dashboard/DashboardLayout.vue";
 
 Vue.use(VueRouter);
 
@@ -12,38 +12,54 @@ const routes = [
     children: [
       {
         path: "/dashboard",
-        name: "dashboard",
+        name: "Dashboard",
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () =>
           import(/* webpackChunkName: "demo" */ "../views/Dashboard.vue"),
+        // meta: {
+        //   requiresAuth: true,
+        // },
       },
       {
-        path: "/teams",
-        name: "teams",
+        path: "/user-teams",
+        name: "Teams",
         component: () =>
           import(/* webpackChunkName: "demo" */ "../views/Teams.vue"),
+        // meta: {
+        //   requiresAuth: true,
+        // },
       },
       {
-        path: "/template",
-        name: "template",
+        path: "/appraisal-template",
+        name: "Template",
         component: () =>
           import(
             /* webpackChunkName: "demo" */ "../views/AppraisalTemplate.vue"
           ),
+        // meta: {
+        //   requiresAuth: true,
+        // },
       },
       {
-        path: "/maps",
-        name: "maps",
+        path: "/schedule",
+        name: "Schedule",
         component: () =>
           import(/* webpackChunkName: "demo" */ "../views/Schedule.vue"),
+        // meta: {
+        //   requiresAuth: true,
+        // },
       },
+
       {
-        path: "/tables",
-        name: "tables",
+        path: "/settings",
+        name: "Settings",
         component: () =>
           import(/* webpackChunkName: "demo" */ "../views/Settings.vue"),
+        // meta: {
+        //   requiresAuth: true,
+        // },
       },
     ],
   },
@@ -55,6 +71,9 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/auth/Signup.vue"),
+    meta: {
+      guest: true,
+    },
   },
   {
     path: "/login",
@@ -64,6 +83,9 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/auth/Login.vue"),
+    meta: {
+      guest: true,
+    },
   },
   {
     path: "/setup",

@@ -37,6 +37,6 @@ export default {};
   width: 100%;
   height: 36px;
   padding: 0 77px 0 46px;
-  background-color: $border_grey_light;
+  // background-color: $border_grey_light;
 }
 </style>

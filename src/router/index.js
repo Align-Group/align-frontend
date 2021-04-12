@@ -67,64 +67,62 @@ const routes = [
           layout: AppLayout,
         },
       },
+
+      {
+        path: "/setup",
+        name: "Setup",
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+          import(/* webpackChunkName: "about" */ "../views/Setup.vue"),
+        meta: {
+          // requiresAuth: true,
+          layout: AppLayout,
+        },
+      },
     ],
   },
+
   {
-    path: "/signup",
-    name: "Signup",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/auth/Signup.vue"),
-    meta: {
-      guest: true,
-      layout: PublicLayout,
-    },
-  },
-  {
-    path: "/login",
-    name: "Login",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/auth/Login.vue"),
-    meta: {
-      guest: true,
-      layout: PublicLayout,
-    },
-  },
-  {
-    path: "/setup",
-    name: "Setup",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Setup.vue"),
-    meta: {
-      // requiresAuth: true,
-      layout: AppLayout,
-    },
-  },
-  {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
-    meta: {
-      // requiresAuth: true,
-      layout: AppLayout,
-    },
-  },
-  {
-    path: "*",
-    name: "404*",
-    component: require("@/views/404.vue").default, // load sync home
+    path: "/",
+    redirect: "login",
+    component: PublicLayout,
+    children: [
+      {
+        path: "/login",
+        name: "Login",
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+          import(/* webpackChunkName: "about" */ "../views/auth/Login.vue"),
+        meta: {
+          guest: true,
+          // layout: PublicLayout,
+        },
+      },
+
+      {
+        path: "/signup",
+        name: "Signup",
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+          import(/* webpackChunkName: "about" */ "../views/auth/Signup.vue"),
+        meta: {
+          guest: true,
+          // layout: PublicLayout,
+        },
+      },
+
+      {
+        path: "*",
+        name: "404*",
+        component: require("@/views/404.vue").default, // load sync home
+      },
+    ],
   },
 ];
 
@@ -132,6 +130,16 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
+  linkActiveClass: "active",
+  scrollBehavior: (to, from, savedPosition) => {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.hash) {
+      return { selector: to.hash };
+    }
+    return { x: 0, y: 0 };
+  },
 });
 
 export default router;

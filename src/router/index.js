@@ -78,7 +78,7 @@ const routes = [
           import(/* webpackChunkName: "about" */ "../views/Setup.vue"),
         meta: {
           // requiresAuth: true,
-          layout: AppLayout,
+          // layout: AppLayout,
         },
       },
     ],

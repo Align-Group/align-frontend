@@ -72,3 +72,30 @@
   clip-path: polygon(100% 3%, 100% 50%, 100% 100%, 0% 100%, 12% 51%, 0% 0%);
 }
 
+
+.mobile-view {
+  @include breakpoint_min(md) {
+    display: none;
+  }
+}
+
+.desktop-view {
+  @include breakpoint_max(md) {
+    display: none !important;
+  }
+}
+
+.stepper-header{
+  color: $brand_white;
+  background-color: $brand_primary;
+}
+
+
+.brand-logo {
+  padding: 18px 61px 10px 63px;
+  @include breakpoint_max(md) {
+    height: 14px;
+    // width: 16px;
+    padding: 21px 10px;
+  }
+}

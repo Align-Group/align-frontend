@@ -8,13 +8,46 @@
     <div class="setup-section">
       <div class="row">
         <div class="col-12">
-          <div class="brand-logo mt-25 ml-80 mb-60">
-            <img v-lazy="localImg('ava.svg')" alt="ava" />
+          <div class="brand-logo">
+            <img v-lazy="localImg('ava.svg')" alt="ava" class="brand-logo" />
           </div>
         </div>
       </div>
 
-      <div class="row">
+      <!-- mobile-view -->
+      <div class="mobile-view py-4 px-3 stepper-header">
+        <div class="d-flex justify-content-between align-items-center">
+          <p class="font-14">Continue setting up your workplace</p>
+          <p>{{ this.currentStep }} of 4</p>
+        </div>
+        <div class="d-flex flex-column" v-if="currentStep === 1">
+          <span class="font-15 font-weight-bold mb-2">Workspace Name</span>
+          <p class="font-12">Name your Ava workspace</p>
+        </div>
+
+        <div class="d-flex flex-column" v-if="currentStep === 2">
+          <span class="font-15 font-weight-bold mb-2"
+            >Send Invites (Optional)</span
+          >
+          <p class="font-12">Invite your colleagues to Ava</p>
+        </div>
+
+        <div class="d-flex flex-column" v-if="currentStep === 3">
+          <span class="font-15 font-weight-bold mb-2"
+            >Create Teams (Optional)</span
+          >
+          <p class="font-12">Provide your team name</p>
+        </div>
+
+        <div class="d-flex flex-column" v-if="currentStep === 4">
+          <span class="font-15 font-weight-bold mb-2">Setup Complete</span>
+          <p class="font-12">Start using Ava!</p>
+        </div>
+      </div>
+
+      <!-- /mobile-view -->
+
+      <div class="row desktop-view">
         <div class="col-12">
           <div class="setup-header">
             <p>Continue setting up your workspace</p>
@@ -255,4 +288,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss"></style>

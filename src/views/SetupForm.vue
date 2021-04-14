@@ -17,7 +17,7 @@
       <!-- mobile-view -->
       <div class="mobile-view py-4 px-3 stepper-header">
         <div class="d-flex justify-content-between align-items-center">
-          <p class="font-14">Continue setting up your workplace</p>
+          <p class="font-13">Continue setting up your workplace</p>
           <p>{{ this.currentStep }} of 4</p>
         </div>
         <div class="d-flex flex-column" v-if="currentStep === 1">

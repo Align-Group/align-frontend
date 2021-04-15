@@ -10,6 +10,7 @@ import VueLazyload from "vue-lazyload";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
+import "../public/css/app.css";
 
 import RenderAssets from "@/scripts/mixins/RenderAssets";
 

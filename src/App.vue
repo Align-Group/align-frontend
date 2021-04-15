@@ -15,5 +15,6 @@ body {
   scroll-behavior: smooth;
   max-width: 100%;
   overflow-x: hidden;
+  font-family: "Lato", sans-serif;
 }
 </style>
